@@ -1,0 +1,50 @@
+{
+    "name": "ephys_compression_study",
+    "description": "Ephys compression study",
+    "processors": [
+        {
+            "name": "ephys_compression_study.ephys_preprocess",
+            "description": "Run preprocessing on an electrophysiology dataset with a series of compression ratios",
+            "label": "ephys_compression_study.ephys_preprocess",
+            "image": "magland/pairio-ephys-compression-study:0.1.0",
+            "executable": "/app/main.py",
+            "inputs": [
+                {
+                    "name": "input",
+                    "description": "Input NWB file in .nwb or .nwb.lindi format"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "output",
+                    "description": "Output data in .nwb.lindi format"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "electrical_series_path",
+                    "type": "str",
+                    "description": "Path to the electrical series object in the NWB file"
+                },
+                {
+                    "name": "compression_ratios",
+                    "type": "List[float]",
+                    "description": "List of compression ratios to use"
+                },
+                {
+                    "name": "freq_min",
+                    "type": "float",
+                    "description": "Minimum frequency for bandpass filter",
+                    "defaultValue": 300
+                },
+                {
+                    "name": "freq_max",
+                    "type": "float",
+                    "description": "Maximum frequency for bandpass filter",
+                    "defaultValue": 6000
+                }
+            ],
+            "attributes": []
+        }
+    ]
+}
