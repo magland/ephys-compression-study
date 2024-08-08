@@ -55,7 +55,7 @@
             "inputs": [
                 {
                     "name": "input",
-                    "description": "Input NWB file in .nwb or .nwb.lindi format"
+                    "description": "Input NWB file in .nwb.lindi format"
                 }
             ],
             "outputs": [

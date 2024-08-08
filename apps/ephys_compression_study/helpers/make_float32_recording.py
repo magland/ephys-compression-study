@@ -5,8 +5,8 @@ import spikeinterface as si
 
 def make_float32_recording(recording: si.BaseRecording, *, dirname: str) -> si.BinaryRecordingExtractor:
     if os.path.exists(dirname):
-        shutil.rmtree(dirname)
-    os.mkdir(dirname)
+        shutil.rmtree(dirname, ignore_errors=True)
+    os.makedirs(dirname, exist_ok=True)
     fname = f'{dirname}/recording.dat'
     if recording.get_num_segments() != 1:
         raise NotImplementedError("Can only write recordings with a single segment")

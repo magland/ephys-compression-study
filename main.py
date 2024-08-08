@@ -63,7 +63,7 @@ def main():
 
     job_def2 = PairioJobDefinition(
         appName='ephys_compression_study',
-        processorName='mountainsort5',
+        processorName='ephys_compression_study.mountainsort5',
         inputFiles=[
             PairioJobInputFile(
                 name='input',

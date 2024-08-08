@@ -32,6 +32,9 @@ RUN git clone https://github.com/magland/hdmf \
     && pip install -e . \
     && echo "v1"
 
+# Install MountainSort 5
+RUN pip install mountainsort5==0.5.6
+
 # Copy files into the container
 COPY *.py /app/
 COPY helpers/*.py /app/helpers/
