@@ -45,6 +45,38 @@
                 }
             ],
             "attributes": []
+        },
+        {
+            "name": "ephys_compression_study.mountainsort5",
+            "description": "Run mountainsort5 on an electrophysiology dataset prepared with ephys_compression_study.ephys_preprocess with a series of compression ratios",
+            "label": "ephys_compression_study.mountainsort5",
+            "image": "magland/pairio-ephys-compression-study:0.1.0",
+            "executable": "/app/main.py",
+            "inputs": [
+                {
+                    "name": "input",
+                    "description": "Input NWB file in .nwb or .nwb.lindi format"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "output",
+                    "description": "Output data in .nwb.lindi format"
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "electrical_series_path",
+                    "type": "str",
+                    "description": "Path to the electrical series object in the NWB file"
+                },
+                {
+                    "name": "compression_ratios",
+                    "type": "List[float]",
+                    "description": "List of compression ratios to use"
+                }
+            ],
+            "attributes": []
         }
     ]
 }
